@@ -1,0 +1,171 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para el cuerpo de la página */
+body {
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 10px;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("/LOGIN/image.png"), #000;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.wrapper {
+    width: 400px;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    transition: all 0.3s ease;
+}
+
+.wrapper:hover {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+#questions {
+    margin-bottom: 20px;
+}
+
+#score {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#submit {
+    background-color: #271930;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#submit:hover {
+    color: #000000;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+}
+
+#result {
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+/* Estilo para las opciones del quiz */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: rgba(255, 107, 129, 0.1);
+}
+
+/* Resaltar la respuesta cuando el ratón pase por encima */
+ul li:hover {
+    background-color: rgba(255, 107, 129, 0.3);  /* Fondo más fuerte cuando el ratón pasa */
+    border-color: #ff6b81;  /* Resalta el borde en rosa */
+}
+
+/* Estilo para cuando una opción es seleccionada */
+ul li.selected {
+    background-color: rgba(255, 107, 129, 0.3);
+    border-color: #ff6b81;  /* Resalta el borde con rosa */
+}
+
+
+ul li.selected {
+    border-color: #ff6b81;  /* Resalta el borde con rosa */
+    background-color: rgba(255, 107, 129, 0.3);  /* Fondo más marcado cuando se selecciona */
+}
+
+ul li:hover {
+    background-color: rgba(255, 107, 129, 0.15); /* Suavizamos el fondo al pasar el ratón */
+}
+
+input[type="radio"] {
+    margin-right: 10px; /* Separar el input del texto */
+}
+
+/* Estilo cuando se selecciona la respuesta */
+input[type="radio"]:checked + label {
+    color: #ff6b81;  /* Cambia el color del texto cuando se selecciona la respuesta */
+}
+
+input[type="radio"]:checked + label + ul li.selected {
+    border-color: #ff6b81;
+    background-color: rgba(255, 107, 129, 0.3); /* Fondo cuando la opción está seleccionada */
+}
+
+/* Estilo cuando se completa el quiz */
+#result h2, #result p {
+    color: #ff6b81;  /* Cambiamos el color al tono rosa */
+    text-align: center;
+}
+
+#goToNextPage {
+    background-color: #271930;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+    max-width: 300px; /* Limita el tamaño máximo */
+    margin: 30px auto 0; /* Centra el botón y le da margen en la parte superior */
+    display: block; /* Hace que el botón sea un bloque y se centre horizontalmente */
+  }
+  
+  #goToNextPage:hover {
+    color: #000000;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+  }
+  

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de que el archivo CSS esté en la ubicación correcta -->
+</head>
+<body>
+    <div class="wrapper">
+        <form id="login-form"> <!-- Agregamos el ID al formulario -->
+            <h2>Inicia sesión</h2>
+
+            <!-- Input para el nombre de usuario -->
+            <div class="input-field">
+                <input type="text" id="username" required> <!-- Agregamos un ID al input -->
+                <label>Pon el nombre del usuario</label>
+            </div>
+
+            <!-- Input para la contraseña -->
+            <div class="input-field">
+                <input type="password" id="password" required> <!-- Agregamos un ID al input -->
+                <label>Pon la contraseña</label>
+            </div>
+
+            <!-- Botón de submit -->
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const correctUsername = "1";  // Cambia esto por el nombre de usuario correcto
+            const correctPassword = "1";  // Cambia esto por la contraseña correcta
+
+            // Obtener los elementos del formulario
+            const loginForm = document.getElementById("login-form");
+            const usernameInput = document.getElementById("username");
+            const passwordInput = document.getElementById("password");
+
+            // Agregar el evento para la verificación cuando se envíe el formulario
+            loginForm.addEventListener("submit", function (event) {
+                event.preventDefault();  // Evita que se recargue la página al enviar el formulario
+                console.log("Formulario enviado");
+
+                const username = usernameInput.value;
+                const password = passwordInput.value;
+
+                // Verificar si el nombre de usuario y la contraseña coinciden
+                if (username === correctUsername && password === correctPassword) {
+                    alert("Inicio de sesión exitoso!");
+                    window.location.href = "encuesta/index2.html";  // Ruta relativa
+                } else {
+                    alert("Usuario o contraseña incorrectos. Inténtalo de nuevo.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
